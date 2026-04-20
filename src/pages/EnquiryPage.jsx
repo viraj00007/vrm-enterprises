@@ -54,11 +54,7 @@ export default function EnquiryPage() {
     const [error, setError] = useState('')
 
     useEffect(() => {
-        if (preselected && window.innerWidth < 1024) {
-            setTimeout(() => {
-                window.scrollTo({ top: 0, behavior: 'smooth' })
-            }, 300)
-        }
+        window.scrollTo({ top: 0, behavior: 'instant' })
     }, [])
     const toggleProduct = (name) => {
         setSelectedProducts(prev => {
