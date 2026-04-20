@@ -80,7 +80,7 @@ export default function ProductDetailPage() {
     return slug === id || String(p.id) === id
   })
 
-  useEffect(() => { window.scrollTo(0, 0) }, [])
+  useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }) }, [])
 
   if (!product) return (
     <div className="min-h-screen flex items-center justify-center" style={{ background:'#020b18' }}>
