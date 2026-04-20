@@ -23,7 +23,6 @@ function SuccessScreen({ enquiryId, onNew }) {
                     <div className="mt-3 text-sm" style={{ color: '#5a8aaa' }}>Save this for your reference</div>
                 </div>
                 <div className="space-y-3">
-
                     <a href="mailto:vrmenterprises006@gmail.com"
                         className="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-bold text-sm"
                         style={{ background: 'rgba(0,210,255,0.08)', border: '1px solid rgba(0,210,255,0.25)', color: '#00d2ff' }}>
@@ -54,6 +53,13 @@ export default function EnquiryPage() {
     const [success, setSuccess] = useState(null)
     const [error, setError] = useState('')
 
+    useEffect(() => {
+        if (preselected && window.innerWidth < 1024) {
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+            }, 300)
+        }
+    }, [])
     const toggleProduct = (name) => {
         setSelectedProducts(prev => {
             const exists = prev.find(p => p.productName === name)
@@ -172,7 +178,7 @@ export default function EnquiryPage() {
                             </div>
 
                             {/* Step 2: Contact */}
-                            <div className="rounded-2xl p-6" style={{ background: 'rgba(10,30,53,0.5)', border: '1px solid rgba(0,210,255,0.1)' }}>
+                            <div id="your-details" className="rounded-2xl p-6" style={{ background: 'rgba(10,30,53,0.5)', border: '1px solid rgba(0,210,255,0.1)' }}>
                                 <div className="flex items-center gap-3 mb-5">
                                     <div className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-black" style={{ background: '#00d2ff', color: '#020b18' }}>2</div>
                                     <h2 className="font-bold text-lg" style={{ color: '#e8f4ff' }}>Your Details</h2>
@@ -255,7 +261,6 @@ export default function EnquiryPage() {
 
                                 <div className="pt-4 space-y-3" style={{ borderTop: '1px solid rgba(0,210,255,0.1)' }}>
                                     <p className="text-xs text-center" style={{ color: '#5a8aaa' }}>Or contact us directly</p>
-
                                     <a href="mailto:vrmenterprises006@gmail.com"
                                         className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-bold"
                                         style={{ background: 'rgba(0,210,255,0.08)', border: '1px solid rgba(0,210,255,0.25)', color: '#00d2ff' }}>
