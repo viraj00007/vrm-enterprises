@@ -61,7 +61,7 @@ export default function Contact() {
                 <div className="text-[10px] font-bold tracking-[2px] uppercase mb-1" style={{ color: '#5a8aaa' }}>
                   {c.label}
                 </div>
-                <div className="text-lg font-semibold" style={{ color: c.link ? '#00d2ff' : '#e8f4ff' }}>{c.value}</div>
+                <div className="text-lg font-semibold break-all" style={{ color: c.link ? '#00d2ff' : '#e8f4ff' }}>{c.value}</div>
                 <div className="text-sm mt-0.5 font-light" style={{ color: '#5a8aaa' }}>{c.sub}</div>
               </div>
               {c.link && (
