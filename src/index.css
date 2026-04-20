@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700;900&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #020b18;
+  --surface: #061426;
+  --card: #0a1e35;
+  --border: rgba(0, 210, 255, 0.12);
+  --accent: #00d2ff;
+  --accent2: #0094b8;
+  --gold: #f0c060;
+  --text: #e8f4ff;
+  --muted: #5a8aaa;
+  --green: #00e5a0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent2);
+  border-radius: 4px;
+}
+
+#cursor-glow {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 210, 255, 0.04) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: left 0.08s linear, top 0.08s linear;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 210, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 210, 255, 0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(-100px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.particle {
+  animation: particleFloat linear infinite;
+  position: absolute;
+  border-radius: 50%;
+}
+
+@keyframes vialFloat0 {
+
+  0%,
+  100% {
+    transform: rotate(-6deg) translateY(0)
+  }
+
+  50% {
+    transform: rotate(-6deg) translateY(-14px)
+  }
+}
+
+@keyframes vialFloat1 {
+
+  0%,
+  100% {
+    transform: rotate(4deg) translateY(0)
+  }
+
+  50% {
+    transform: rotate(4deg) translateY(-18px)
+  }
+}
+
+@keyframes vialFloat2 {
+
+  0%,
+  100% {
+    transform: rotate(-3deg) translateY(0)
+  }
+
+  50% {
+    transform: rotate(-3deg) translateY(-12px)
+  }
+}
+
+@keyframes vialFloat3 {
+
+  0%,
+  100% {
+    transform: rotate(5deg) translateY(0)
+  }
+
+  50% {
+    transform: rotate(5deg) translateY(-10px)
+  }
+}
+
+.vial-0 {
+  animation: vialFloat0 5.0s ease-in-out infinite;
+}
+
+.vial-1 {
+  animation: vialFloat1 5.5s ease-in-out infinite 0.4s;
+}
+
+.vial-2 {
+  animation: vialFloat2 6.0s ease-in-out infinite 0.8s;
+}
+
+.vial-3 {
+  animation: vialFloat3 5.2s ease-in-out infinite 1.2s;
+}
+
+@keyframes orbitSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.orbit-spin {
+  animation: orbitSpin 25s linear infinite;
+}
+
+.orbit-spin2 {
+  animation: orbitSpin 18s linear infinite reverse;
+}
+
+@keyframes breathe {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 30%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+
+.shine:hover::after {
+  left: 130%;
+}
+
+.glass {
+  background: rgba(10, 30, 53, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 210, 255, 0.12);
+}
+
+.glow-text {
+  text-shadow: 0 0 40px rgba(0, 210, 255, 0.4);
+}
+
+.grad-text {
+  background: linear-gradient(135deg, var(--accent), #00e5a0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s;
+  text-decoration: none;
+  animation: waPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes waPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 8px 50px rgba(37, 211, 102, 0.7);
+  }
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.12);
+}
+
+.product-line {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-line {
+  transform: scaleX(1);
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
+.product-arrow {
+  transition: all 0.3s;
+}
+
+.product-card:hover .product-arrow {
+  transform: translate(3px, -3px);
+}
