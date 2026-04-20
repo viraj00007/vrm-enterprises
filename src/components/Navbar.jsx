@@ -84,13 +84,6 @@ export default function Navbar() {
               {s === 'why' ? 'Why Us' : s.charAt(0).toUpperCase() + s.slice(1)}
             </button>
           ))}
-          <button
-            onClick={() => { setMenuOpen(false); navigate('/track') }}
-            className="py-3 rounded-lg text-sm font-semibold"
-            style={{ border: '1px solid rgba(0,210,255,0.3)', color: '#00d2ff' }}
-          >
-            📦 Track Order
-          </button>
         </div>
       )}
     </nav>
