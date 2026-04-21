@@ -30,20 +30,21 @@ export default function Navbar() {
     <nav
       className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 h-[72px] flex items-center justify-between transition-all duration-300"
       style={{
-        background: scrolled ? 'rgba(2,11,24,0.92)' : 'rgba(2,11,24,0.6)',
+        background: scrolled ? 'rgba(255,255,255,0.97)' : 'rgba(255,255,255,0.85)',
         backdropFilter: 'blur(20px)',
-        borderBottom: '1px solid rgba(0,210,255,0.1)',
+        borderBottom: '1px solid rgba(37,99,235,0.1)',
+        boxShadow: scrolled ? '0 2px 20px rgba(37,99,235,0.08)' : 'none',
       }}
     >
       {/* Brand */}
       <div className="flex items-center gap-3 cursor-pointer" onClick={() => navigate('/')}>
         <div
-          className="w-10 h-10 rounded-xl flex items-center justify-center font-black text-xl text-[#020b18]"
-          style={{ background: 'linear-gradient(135deg, #00d2ff, #0094b8)', fontFamily: "'Cormorant Garamond', serif" }}
+          className="w-10 h-10 rounded-xl flex items-center justify-center font-black text-xl text-white"
+          style={{ background: 'linear-gradient(135deg, #2563eb, #1d4ed8)' }}
         >
           V
         </div>
-        <span className="font-display text-5xl font-black tracking-widest" style={{ color: '#00d2ff', textShadow: '0 0 40px rgba(0,210,255,0.5)' }}>VRM</span>
+        <span className="font-display text-3xl font-black tracking-widest" style={{ color: '#2563eb' }}>VRM</span>
       </div>
 
       {/* Desktop Links */}
@@ -52,7 +53,8 @@ export default function Navbar() {
           <button
             key={s}
             onClick={() => scrollTo(s)}
-            className="px-4 py-2 rounded-lg text-sm font-medium text-[#5a8aaa] hover:text-white hover:bg-white/5 transition-all"
+            className="px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-blue-50 hover:text-blue-600"
+            style={{ color: '#64748b' }}
           >
             {s === 'why' ? 'Why Us' : s.charAt(0).toUpperCase() + s.slice(1)}
           </button>
@@ -64,22 +66,23 @@ export default function Navbar() {
         className="md:hidden flex flex-col gap-1.5 p-2"
         onClick={() => setMenuOpen(!menuOpen)}
       >
-        <span className={`block w-6 h-0.5 bg-white transition-all ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-        <span className={`block w-6 h-0.5 bg-white transition-all ${menuOpen ? 'opacity-0' : ''}`} />
-        <span className={`block w-6 h-0.5 bg-white transition-all ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+        <span className={`block w-6 h-0.5 transition-all ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} style={{ background: '#2563eb' }} />
+        <span className={`block w-6 h-0.5 transition-all ${menuOpen ? 'opacity-0' : ''}`} style={{ background: '#2563eb' }} />
+        <span className={`block w-6 h-0.5 transition-all ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} style={{ background: '#2563eb' }} />
       </button>
 
       {/* Mobile Menu */}
       {menuOpen && (
         <div
           className="absolute top-full left-0 right-0 py-4 px-6 flex flex-col gap-2"
-          style={{ background: 'rgba(6,20,38,0.97)', borderBottom: '1px solid rgba(0,210,255,0.1)' }}
+          style={{ background: '#ffffff', borderBottom: '1px solid rgba(37,99,235,0.1)', boxShadow: '0 8px 24px rgba(37,99,235,0.08)' }}
         >
           {['products', 'why', 'contact'].map((s) => (
             <button
               key={s}
               onClick={() => scrollTo(s)}
-              className="py-3 text-left text-sm font-medium text-[#5a8aaa] hover:text-white transition-colors border-b border-white/5"
+              className="py-3 text-left text-sm font-medium transition-colors hover:text-blue-600"
+              style={{ color: '#64748b', borderBottom: '1px solid rgba(37,99,235,0.06)' }}
             >
               {s === 'why' ? 'Why Us' : s.charAt(0).toUpperCase() + s.slice(1)}
             </button>
