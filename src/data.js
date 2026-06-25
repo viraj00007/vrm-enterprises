@@ -99,8 +99,7 @@ export const ADVANTAGES = [
 ]
 
 export const CONTACT = {
-  phones: ["+91 9019531240", "+91 8755599910"],
-  whatsapp: "918755599910",
-  location: "Delhi NCR",
-  hours: "24/7",
+  email: 'vrmenterprises006@gmail.com',
+  location: 'Bengaluru, Karnataka',
+  hours: 'Mon – Sat, 9 AM – 7 PM',
 }
