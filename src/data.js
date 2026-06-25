@@ -74,26 +74,26 @@ export const PRODUCTS = [
 export const ADVANTAGES = [
   {
     icon: "🏭",
-    title: "WHO-GMP Manufacturing",
-    desc: "Every batch produced at WHO-GMP certified facilities ensuring international quality benchmarks are met consistently.",
+    title: "Licensed Manufacturing Partners",
+    desc: "Products sourced from licensed pharmaceutical manufacturers in Baddi, Himachal Pradesh — India's leading pharma hub.",
     color: "#00d2ff",
   },
   {
     icon: "✅",
-    title: "Reliable Quality Control",
-    desc: "Rigorous QC testing at every production stage. Zero compromise on purity, potency, or sterility.",
+    title: "Quality-Assured Sourcing",
+    desc: "Batch verification, packaging checks, and proper documentation at every step. Zero compromise on product integrity.",
     color: "#00e5a0",
   },
   {
     icon: "🏥",
     title: "Competitive Hospital Rates",
-    desc: "Specially negotiated pricing for bulk hospital procurement. Maximum value without compromising quality.",
+    desc: "Specially negotiated pricing for bulk hospital and clinic procurement. Maximum value without compromising quality.",
     color: "#f0c060",
   },
   {
     icon: "🚚",
     title: "Fast & Reliable Supply",
-    desc: "Quick turnaround with a robust supply chain. Critical medicines delivered when and where you need them.",
+    desc: "Quick turnaround with a reliable dispatch network. Critical medicines delivered when and where you need them.",
     color: "#ff8c60",
   },
 ]

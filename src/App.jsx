@@ -15,11 +15,11 @@ import NotFoundPage from './pages/NotFoundPage'
 import { useScrollReveal, useCursorGlow } from './hooks/useAnimations'
 
 const TRUST_ITEMS = [
-  { icon: '🏆', value: 'WHO-GMP', label: 'Certified' },
-  { icon: '🏥', value: '50+', label: 'Hospitals Served' },
-  { icon: '📦', value: '10,000+', label: 'Orders Delivered' },
+  { icon: '🏭', value: 'Baddi, HP', label: 'Licensed Sourcing' },
+  { icon: '✅', value: 'Quality', label: 'Assured Products' },
   { icon: '🚚', value: '24h', label: 'Fast Supply' },
   { icon: '🇮🇳', value: 'Pan India', label: 'Coverage' },
+  { icon: '🤝', value: 'Bulk', label: 'Order Support' },
   { icon: '💉', value: '5+', label: 'Injectable Products' },
 ]
 
@@ -62,7 +62,7 @@ function TrustBand() {
 
 function Home() {
   useScrollReveal()
-  useEffect(() => { document.title = 'VRM Enterprises | WHO-GMP Pharmaceutical Supplier, Bengaluru' }, [])
+  useEffect(() => { document.title = 'VRM Enterprises | Pharmaceutical Supplier & Marketing Partner' }, [])
   return (
     <>
       <Navbar />

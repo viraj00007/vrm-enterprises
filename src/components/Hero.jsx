@@ -113,7 +113,7 @@ export default function Hero() {
                 ✚
               </div>
               <span className="text-xs font-bold tracking-widest uppercase" style={{ color: '#7dd3fc' }}>
-                WHO-GMP Certified Pharma
+                Quality Pharmaceutical Supply Partner
               </span>
             </div>
 
@@ -130,9 +130,9 @@ export default function Hero() {
             </h1>
 
             <p className="mb-10 max-w-[500px]" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '1.05rem', lineHeight: 1.85 }}>
-              Hospital-grade injectable formulations from{' '}
-              <strong style={{ color: '#7dd3fc', fontWeight: 700 }}>Bengaluru</strong>.
-              Trusted by hospitals & clinics for uncompromising quality, rapid supply, and competitive pricing.
+              Quality injectable and pharmaceutical products sourced from licensed manufacturers in{' '}
+              <strong style={{ color: '#7dd3fc', fontWeight: 700 }}>Baddi, Himachal Pradesh</strong>.
+              Serving hospitals, clinics & healthcare businesses across India with reliable supply and competitive pricing.
             </p>
 
             {/* CTAs */}
@@ -163,8 +163,8 @@ export default function Hero() {
               style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}
             >
               {[
-                { num: '50+', label: 'Hospitals' },
-                { num: 'GMP', label: 'Certified' },
+                { num: '5+', label: 'Products' },
+                { num: 'Baddi', label: 'HP Sourced' },
                 { num: '24h', label: 'Delivery' },
                 { num: 'Pan India', label: 'Supply' },
               ].map((s) => (
@@ -213,8 +213,8 @@ export default function Hero() {
                   🏥
                 </div>
                 <div>
-                  <div className="font-bold text-xs text-white">50+ Hospitals</div>
-                  <div className="text-[10px]" style={{ color: 'rgba(255,255,255,0.45)' }}>Trust VRM Daily</div>
+                  <div className="font-bold text-xs text-white">Licensed Sourcing</div>
+                  <div className="text-[10px]" style={{ color: 'rgba(255,255,255,0.45)' }}>Baddi, HP Manufacturers</div>
                 </div>
               </div>
             </div>
@@ -263,7 +263,7 @@ export default function Hero() {
                 </div>
                 <div>
                   <div className="font-bold text-xs text-white">5 Injectables</div>
-                  <div className="text-[10px]" style={{ color: 'rgba(255,255,255,0.45)' }}>ICU-Grade Formulas</div>
+                  <div className="text-[10px]" style={{ color: 'rgba(255,255,255,0.45)' }}>Quality Formulations</div>
                 </div>
               </div>
             </div>

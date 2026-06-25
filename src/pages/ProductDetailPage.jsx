@@ -165,7 +165,7 @@ export default function ProductDetailPage() {
               {[
                 { label: 'Category', value: product.tag, color },
                 { label: 'Form', value: 'IV Injectable', color: '#0891b2' },
-                { label: 'Manufacturer', value: 'WHO-GMP Certified', color: '#059669' },
+                { label: 'Sourced From', value: 'Baddi, HP', color: '#059669' },
                 { label: 'Storage', value: 'Below 25°C', color: '#d97706' },
               ].map((b, i) => (
                 <div
@@ -242,7 +242,7 @@ export default function ProductDetailPage() {
 
             {/* Trust badges */}
             <div className="flex flex-wrap gap-4 mt-5">
-              {['WHO-GMP Certified', 'Fast Delivery', 'Bulk Pricing', 'Quality Tested'].map((f) => (
+              {['Marketed by VRM Enterprises', 'Fast Delivery', 'Bulk Pricing', 'Quality Sourced'].map((f) => (
                 <div key={f} className="flex items-center gap-1.5 text-xs font-semibold" style={{ color: '#64748b' }}>
                   <span style={{ color: '#059669', fontWeight: 900 }}>✓</span>
                   {f}

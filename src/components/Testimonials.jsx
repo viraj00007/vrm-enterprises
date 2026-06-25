@@ -201,8 +201,8 @@ export default function Testimonials() {
           }}
         >
           {[
-            { to: 50, suffix: '+', label: 'Hospitals Served', color: '#0891b2' },
-            { to: 10000, suffix: '+', label: 'Orders Delivered', color: '#059669' },
+            { to: 5, suffix: '+', label: 'Injectable Products', color: '#0891b2' },
+            { to: 4, suffix: '', label: 'States Covered', color: '#059669' },
             { to: 100, suffix: '%', label: 'Quality Assured', color: '#d97706' },
           ].map((s, i) => (
             <div key={i} className="text-center">

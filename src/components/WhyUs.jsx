@@ -57,21 +57,21 @@ function MedicalVisual() {
       <div className="relative z-10 text-center px-4">
         <div
           className="font-display font-black leading-none mb-1"
-          style={{ fontSize: 72, color: '#38bdf8', textShadow: '0 0 40px rgba(56,189,248,0.5)' }}
+          style={{ fontSize: 52, color: '#38bdf8', textShadow: '0 0 40px rgba(56,189,248,0.5)' }}
         >
-          WHO
+          VRM
         </div>
         <div
-          className="font-black text-3xl"
-          style={{ color: 'rgba(56,189,248,0.7)', letterSpacing: 4 }}
+          className="font-black text-xl"
+          style={{ color: 'rgba(56,189,248,0.7)', letterSpacing: 3 }}
         >
-          GMP
+          SUPPLY
         </div>
         <div
           className="text-xs mt-4 uppercase tracking-widest font-bold"
           style={{ color: 'rgba(255,255,255,0.4)' }}
         >
-          Certified Manufacturing
+          Licensed Pharma Partner
         </div>
         <div
           className="mt-3 px-4 py-1.5 rounded-full text-xs font-bold inline-block"
@@ -81,7 +81,7 @@ function MedicalVisual() {
             color: '#34d399',
           }}
         >
-          ✓ Since Inception
+          ✓ Baddi, HP Sourced
         </div>
       </div>
 
