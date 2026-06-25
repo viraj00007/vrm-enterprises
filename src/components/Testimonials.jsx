@@ -1,79 +1,42 @@
-﻿import { useState, useEffect, useRef } from 'react'
-
-function CountUp({ to, suffix = '', duration = 2000 }) {
-  const [val, setVal] = useState(0)
-  const ref = useRef(null)
-  const done = useRef(false)
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const obs = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting && !done.current) {
-        done.current = true
-        const steps = 60
-        let cur = 0
-        const inc = to / steps
-        const t = setInterval(() => {
-          cur += inc
-          if (cur >= to) { setVal(to); clearInterval(t) }
-          else setVal(Math.floor(cur))
-        }, duration / steps)
-      }
-    }, { threshold: 0.5 })
-    obs.observe(el)
-    return () => obs.disconnect()
-  }, [to, duration])
-  return <span ref={ref}>{to >= 1000 ? val.toLocaleString('en-IN') : val}{suffix}</span>
-}
-
-const TESTIMONIALS = [
+const STEPS = [
   {
-    name: 'Dr. Rajesh Sharma',
-    role: 'Chief Medical Officer',
-    hospital: 'City General Hospital, Bengaluru',
-    text: 'VRM has been our trusted supplier for over 2 years. The quality of their injectable formulations is consistently excellent and delivery is always on time. Highly recommended for any hospital.',
-    rating: 5,
-    avatar: 'RS',
-    color: '#0891b2',
+    step: '01',
+    icon: '🔍',
+    title: 'Browse & Select',
+    desc: 'Browse our range of quality injectable formulations. Filter by category — antibiotics, analgesics, critical care. View full composition and clinical details.',
+    color: '#00d2ff',
   },
   {
-    name: 'Dr. Priya Verma',
-    role: 'ICU Head',
-    hospital: 'Apollo Clinic, Bengaluru',
-    text: 'We specifically use Linomox-IV and Zolbacten from VRM for our ICU patients. The WHO-GMP certification gives us confidence in every batch. Pricing is very competitive for bulk orders.',
-    rating: 5,
-    avatar: 'PV',
-    color: '#059669',
+    step: '02',
+    icon: '📋',
+    title: 'Send Enquiry',
+    desc: 'Submit your product requirements, quantities, and hospital details through our enquiry form. Takes less than 2 minutes.',
+    color: '#0ea5e9',
   },
   {
-    name: 'Mr. Anil Gupta',
-    role: 'Pharmacy Manager',
-    hospital: 'Medplus Hospital Chain, Karnataka',
-    text: 'Fast supply, great pricing, and responsive team. When we had an urgent requirement for Tazomor-4.5 at midnight, VRM arranged delivery by morning. Outstanding service.',
-    rating: 5,
-    avatar: 'AG',
-    color: '#d97706',
+    step: '03',
+    icon: '💬',
+    title: 'Get Quote in 24h',
+    desc: 'Our team reviews your requirement and responds with competitive bulk pricing, availability, and dispatch timeline within 24 hours.',
+    color: '#6366f1',
   },
   {
-    name: 'Dr. Sunita Yadav',
-    role: 'Surgeon',
-    hospital: 'Ram Manohar Lohia Hospital',
-    text: 'Paracline-IV from VRM is our go-to post-operative analgesic. The consistency in quality across every batch is remarkable. Our patients recover faster with reliable medicines.',
-    rating: 5,
-    avatar: 'SY',
-    color: '#7c3aed',
+    step: '04',
+    icon: '🚚',
+    title: 'Receive Supply',
+    desc: 'Products are dispatched from our licensed manufacturing partners in Baddi, Himachal Pradesh. Fast delivery across India.',
+    color: '#c084fc',
   },
 ]
 
-function StarRating({ count }) {
-  return (
-    <div className="flex gap-0.5 mb-4">
-      {[...Array(count)].map((_, i) => (
-        <span key={i} style={{ color: '#f59e0b', fontSize: 16, textShadow: '0 0 8px rgba(245,158,11,0.4)' }}>★</span>
-      ))}
-    </div>
-  )
-}
+const WHY_POINTS = [
+  { icon: '📦', text: 'Bulk order support for hospitals, clinics & distributors' },
+  { icon: '🏭', text: 'Products sourced from licensed manufacturers in Baddi, HP' },
+  { icon: '✅', text: 'Batch verification and quality documentation provided' },
+  { icon: '💰', text: 'Competitive pricing for bulk procurement' },
+  { icon: '🤝', text: 'Flexible credit terms for registered institutions' },
+  { icon: '🇮🇳', text: 'Pan-India supply with 24–48 hour delivery' },
+]
 
 export default function Testimonials() {
   return (
@@ -87,138 +50,154 @@ export default function Testimonials() {
         backgroundSize: '28px 28px',
       }} />
 
-      {/* Decorative blobs */}
       <div className="blob absolute pointer-events-none" style={{
         width: 400, height: 400,
         background: 'radial-gradient(circle, rgba(14,165,233,0.1) 0%, transparent 70%)',
         top: -100, right: -100, animationDuration: '16s',
       }} />
-      <div className="blob absolute pointer-events-none" style={{
-        width: 300, height: 300,
-        background: 'radial-gradient(circle, rgba(124,58,237,0.09) 0%, transparent 70%)',
-        bottom: -80, left: -80, animationDuration: '13s', animationDelay: '-5s',
-      }} />
 
       <div className="max-w-[1400px] mx-auto relative z-10">
-        {/* Header */}
+
+        {/* How We Work */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4 reveal">
             <div className="h-px w-8" style={{ background: 'linear-gradient(90deg, transparent, #0ea5e9)' }} />
-            <p className="text-xs font-bold tracking-[3px] uppercase" style={{ color: '#0ea5e9' }}>Trusted By</p>
+            <p className="text-xs font-bold tracking-[3px] uppercase" style={{ color: '#0ea5e9' }}>Simple Process</p>
             <div className="h-px w-8" style={{ background: 'linear-gradient(90deg, #0ea5e9, transparent)' }} />
           </div>
           <h2
             className="font-display font-black leading-tight mb-4 reveal"
             style={{ fontSize: 'clamp(32px, 4vw, 54px)', color: '#0f172a' }}
           >
-            What Doctors{' '}
+            How to{' '}
             <span style={{
               background: 'linear-gradient(135deg, #0ea5e9, #7c3aed)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
             }}>
-              Say
+              Order from Us
             </span>
           </h2>
           <p className="text-base reveal" style={{ color: '#64748b' }}>
-            Trusted by hospitals and clinics across India
+            From browsing to delivery — a straightforward process built for healthcare buyers
           </p>
         </div>
 
-        {/* Testimonial cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
-          {TESTIMONIALS.map((t, i) => (
+        {/* Steps */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-20">
+          {STEPS.map((s, i) => (
             <div
               key={i}
-              className="testimonial-card reveal rounded-2xl p-7 relative overflow-hidden"
+              className="reveal rounded-2xl p-7 relative overflow-hidden"
               style={{
-                background: 'rgba(255,255,255,0.85)',
+                background: 'rgba(255,255,255,0.9)',
                 backdropFilter: 'blur(16px)',
                 border: '1px solid rgba(8,145,178,0.12)',
-                boxShadow: '0 4px 20px rgba(14,165,233,0.1)',
+                boxShadow: '0 4px 20px rgba(14,165,233,0.08)',
                 transitionDelay: `${i * 0.1}s`,
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = `${t.color}40`
-                e.currentTarget.style.background = 'rgba(255,255,255,0.98)'
+                e.currentTarget.style.borderColor = `${s.color}50`
+                e.currentTarget.style.boxShadow = `0 16px 48px ${s.color}20`
+                e.currentTarget.style.transform = 'translateY(-6px)'
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.borderColor = 'rgba(8,145,178,0.12)'
-                e.currentTarget.style.background = 'rgba(255,255,255,0.85)'
+                e.currentTarget.style.boxShadow = '0 4px 20px rgba(14,165,233,0.08)'
+                e.currentTarget.style.transform = 'translateY(0)'
               }}
             >
-              {/* Left accent bar */}
+              {/* Step number watermark */}
               <div
-                className="absolute top-0 left-0 bottom-0 w-1 rounded-l-2xl"
-                style={{ background: `linear-gradient(180deg, ${t.color}, ${t.color}40)` }}
-              />
-
-              {/* Large quote mark */}
-              <div
-                className="font-display font-black leading-none mb-1 select-none"
-                style={{ fontSize: 72, color: `${t.color}18`, lineHeight: 0.8 }}
-              >"</div>
-
-              <StarRating count={t.rating} />
-
-              <p className="text-sm leading-relaxed mb-6" style={{ color: '#475569', fontStyle: 'italic' }}>
-                "{t.text}"
-              </p>
-
-              <div
-                className="flex items-center gap-3 pt-4"
-                style={{ borderTop: `1px solid ${t.color}18` }}
+                className="absolute top-3 right-4 font-display font-black leading-none select-none pointer-events-none"
+                style={{ fontSize: 64, color: `${s.color}10` }}
               >
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center font-black text-sm flex-shrink-0"
-                  style={{
-                    background: `linear-gradient(135deg, ${t.color}18, ${t.color}08)`,
-                    border: `1.5px solid ${t.color}35`,
-                    color: t.color,
-                    boxShadow: `0 4px 12px ${t.color}20`,
-                  }}
-                >
-                  {t.avatar}
-                </div>
-                <div>
-                  <div className="font-bold text-sm" style={{ color: '#0f172a' }}>{t.name}</div>
-                  <div className="text-xs font-medium" style={{ color: t.color }}>{t.role}</div>
-                  <div className="text-xs mt-0.5" style={{ color: '#94a3b8' }}>{t.hospital}</div>
-                </div>
+                {s.step}
               </div>
+
+              {/* Step badge */}
+              <div
+                className="inline-block text-xs font-black tracking-widest uppercase px-3 py-1 rounded-full mb-4"
+                style={{ background: `${s.color}15`, color: s.color, border: `1px solid ${s.color}30` }}
+              >
+                Step {s.step}
+              </div>
+
+              <div
+                className="w-12 h-12 rounded-2xl flex items-center justify-center text-xl mb-4"
+                style={{ background: `${s.color}15`, border: `1.5px solid ${s.color}30` }}
+              >
+                {s.icon}
+              </div>
+
+              <h3 className="font-bold text-lg mb-3" style={{ color: '#0f172a' }}>{s.title}</h3>
+              <p className="text-sm leading-relaxed" style={{ color: '#64748b' }}>{s.desc}</p>
+
+              {/* Connector arrow (not on last) */}
+              {i < STEPS.length - 1 && (
+                <div
+                  className="hidden xl:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 text-lg font-bold"
+                  style={{ color: '#cbd5e1' }}
+                >
+                  →
+                </div>
+              )}
             </div>
           ))}
         </div>
 
-        {/* Stats bar */}
+        {/* Why Choose VRM — bullet list */}
         <div
-          className="grid grid-cols-3 gap-6 p-8 rounded-2xl reveal"
+          className="rounded-3xl p-8 md:p-10 reveal"
           style={{
-            background: 'linear-gradient(135deg, rgba(14,165,233,0.1), rgba(99,102,241,0.08))',
-            border: '1px solid rgba(14,165,233,0.22)',
-            boxShadow: '0 4px 24px rgba(14,165,233,0.1)',
+            background: 'linear-gradient(135deg, rgba(14,165,233,0.06), rgba(99,102,241,0.06))',
+            border: '1px solid rgba(14,165,233,0.18)',
           }}
         >
-          {[
-            { to: 5, suffix: '+', label: 'Injectable Products', color: '#0891b2' },
-            { to: 4, suffix: '', label: 'States Covered', color: '#059669' },
-            { to: 100, suffix: '%', label: 'Quality Assured', color: '#d97706' },
-          ].map((s, i) => (
-            <div key={i} className="text-center">
-              <div
-                className="font-display font-black num-glow"
-                style={{ fontSize: 'clamp(28px, 3vw, 42px)', color: s.color }}
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <p className="text-xs font-bold tracking-[3px] uppercase mb-3" style={{ color: '#0ea5e9' }}>About VRM Enterprises</p>
+              <h3
+                className="font-display font-black leading-tight mb-4"
+                style={{ fontSize: 'clamp(24px, 3vw, 38px)', color: '#0f172a' }}
               >
-                <CountUp to={s.to} suffix={s.suffix} />
-              </div>
-              <div className="text-xs mt-1.5 font-semibold uppercase tracking-wider" style={{ color: '#64748b' }}>{s.label}</div>
+                Pharmaceutical Supply &{' '}
+                <span style={{
+                  background: 'linear-gradient(135deg, #0ea5e9, #6366f1)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}>
+                  Marketing Partner
+                </span>
+              </h3>
+              <p className="text-sm leading-relaxed mb-2" style={{ color: '#64748b' }}>
+                VRM Enterprises is a pharmaceutical marketing and supply company providing reliable
+                healthcare products to hospitals, clinics, distributors, and healthcare businesses.
+              </p>
+              <p className="text-sm leading-relaxed" style={{ color: '#64748b' }}>
+                Our products are sourced from licensed pharmaceutical manufacturers in{' '}
+                <strong style={{ color: '#0ea5e9' }}>Baddi, Himachal Pradesh</strong> — one of India's
+                most recognized pharmaceutical manufacturing hubs.
+              </p>
             </div>
-          ))}
+            <div className="grid grid-cols-1 gap-3">
+              {WHY_POINTS.map((pt, i) => (
+                <div
+                  key={i}
+                  className="flex items-start gap-3 p-3 rounded-xl"
+                  style={{ background: 'rgba(255,255,255,0.7)' }}
+                >
+                  <span style={{ fontSize: 18 }}>{pt.icon}</span>
+                  <span className="text-sm font-medium" style={{ color: '#334155' }}>{pt.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
+
       </div>
     </section>
   )
 }
-
-

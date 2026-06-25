@@ -36,14 +36,14 @@ export default function Footer() {
               <span className="font-light text-xl ml-2" style={{ color: 'rgba(255,255,255,0.4)' }}>Enterprises</span>
             </div>
             <p className="text-sm leading-relaxed max-w-[240px]" style={{ color: 'rgba(255,255,255,0.45)' }}>
-              WHO-GMP certified pharmaceutical distributor. Supplying hospital-grade injectables across India.
+              Pharmaceutical supply & marketing partner. Quality injectables sourced from licensed manufacturers in Baddi, Himachal Pradesh.
             </p>
             <div className="flex gap-3 mt-5">
               <div className="px-3 py-1.5 rounded-lg text-[10px] font-bold tracking-wider uppercase" style={{ background: 'rgba(8,145,178,0.15)', color: '#67e8f9', border: '1px solid rgba(8,145,178,0.25)' }}>
-                WHO-GMP
+                Baddi, HP
               </div>
               <div className="px-3 py-1.5 rounded-lg text-[10px] font-bold tracking-wider uppercase" style={{ background: 'rgba(5,150,105,0.15)', color: '#34d399', border: '1px solid rgba(5,150,105,0.25)' }}>
-                Certified
+                Pan India
               </div>
             </div>
           </div>
@@ -109,10 +109,10 @@ export default function Footer() {
           style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
         >
           <div className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>
-            © 2026 VRM Enterprises · {CONTACT.location} · WHO-GMP Certified
+            © 2026 VRM Enterprises · {CONTACT.location} · Pharmaceutical Supplier
           </div>
           <div className="text-xs" style={{ color: 'rgba(255,255,255,0.2)' }}>
-            Hospital-grade pharmaceuticals · Made in India
+            Sourced from licensed manufacturers · Baddi, Himachal Pradesh
           </div>
         </div>
       </div>

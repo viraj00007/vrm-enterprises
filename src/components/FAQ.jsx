@@ -10,8 +10,8 @@ const FAQS = [
     a: 'We deliver within 24–48 hours across major cities. For urgent critical care requirements, same-day delivery can often be arranged on request.',
   },
   {
-    q: 'Are all products WHO-GMP certified?',
-    a: 'Yes. Every batch is manufactured at WHO-GMP certified facilities with rigorous QC testing for purity, potency, and sterility before dispatch.',
+    q: 'Where are the products sourced from?',
+    a: 'All products are sourced from licensed pharmaceutical manufacturers in Baddi, Himachal Pradesh — one of India\'s leading pharmaceutical manufacturing hubs. Batch documentation and quality details are available on the product packaging.',
   },
   {
     q: 'Do you offer credit terms for hospitals?',

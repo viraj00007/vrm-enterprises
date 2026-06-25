@@ -130,7 +130,7 @@ export default function Products() {
             </span>
           </h2>
           <p className="text-base leading-relaxed reveal" style={{ color: '#64748b' }}>
-            WHO-GMP manufactured, hospital-tested, and competitively priced for bulk procurement.
+            Quality-sourced from licensed manufacturers in Baddi, HP. Competitively priced for bulk hospital procurement.
           </p>
 
           {/* Category filter */}
