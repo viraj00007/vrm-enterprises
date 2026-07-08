@@ -113,7 +113,7 @@ export default function Footer() {
               © 2026 VRM Enterprises · Meerut, UP · Pharmaceutical Supplier
             </div>
             <div className="text-xs" style={{ color: 'rgba(255,255,255,0.2)' }}>
-              Proprietors: Rishabh Chaudhary &amp; Viraj Chaudhary
+              Proprietors: Rishabh Raj Chaudhary &amp; Viraj Chaudhary
             </div>
           </div>
           <div className="flex flex-wrap gap-x-4 gap-y-1">
