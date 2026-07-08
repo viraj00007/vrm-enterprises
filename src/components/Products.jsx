@@ -82,10 +82,11 @@ function ProductCard({ p, index }) {
       </div>
 
       <div
-        className="mt-5 pt-4 text-xs font-medium text-center tracking-wide"
-        style={{ borderTop: `1px solid ${p.color}15`, color: '#94a3b8' }}
+        className="mt-5 pt-4 flex items-center justify-between"
+        style={{ borderTop: `1px solid ${p.color}15` }}
       >
-        Click to view details & send enquiry →
+        <span className="text-[10px] font-semibold" style={{ color: '#b0bec5' }}>Marketed by VRM Enterprises</span>
+        <span className="text-xs font-medium" style={{ color: '#94a3b8' }}>View details →</span>
       </div>
     </div>
   )

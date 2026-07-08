@@ -100,6 +100,11 @@ export const ADVANTAGES = [
 
 export const CONTACT = {
   email: 'vrmenterprises006@gmail.com',
-  location: 'Bengaluru, Karnataka',
+  location: 'Meerut, Uttar Pradesh',
+  address: '237/3 Jagriti Vihar, Meerut, Uttar Pradesh 250004',
+  phone1: '8755599910',
+  phone2: '9019531240',
   hours: 'Mon – Sat, 9 AM – 7 PM',
+  gstin: '09CFOPR9852J1ZD',
+  drugLicense: 'UP1521B002152 / UP1520B002159',
 }

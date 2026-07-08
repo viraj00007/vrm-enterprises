@@ -79,16 +79,23 @@ export default function Footer() {
               <div className="flex items-start gap-2.5">
                 <span style={{ color: '#67e8f9' }}>📍</span>
                 <span className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                  {CONTACT.location}
+                  237/3 Jagriti Vihar, Meerut
                   <br />
-                  <span style={{ color: 'rgba(255,255,255,0.35)' }}>Serving Pan India</span>
+                  <span style={{ color: 'rgba(255,255,255,0.35)' }}>Uttar Pradesh 250004</span>
+                </span>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <span style={{ color: '#67e8f9' }}>📞</span>
+                <span className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                  {CONTACT.phone1}<br />
+                  <span style={{ color: 'rgba(255,255,255,0.35)' }}>{CONTACT.phone2}</span>
                 </span>
               </div>
               <div className="flex items-start gap-2.5">
                 <span style={{ color: '#67e8f9' }}>⏰</span>
                 <span className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>{CONTACT.hours}</span>
               </div>
-              <a href="mailto:vrmenterprises006@gmail.com" className="flex items-center gap-2.5 no-underline" style={{ textDecoration: 'none' }}>
+              <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-2.5 no-underline" style={{ textDecoration: 'none' }}>
                 <span style={{ color: '#67e8f9' }}>✉️</span>
                 <span
                   className="text-sm transition-colors"
@@ -96,7 +103,7 @@ export default function Footer() {
                   onMouseEnter={(e) => { e.currentTarget.style.color = '#67e8f9' }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.5)' }}
                 >
-                  vrmenterprises006@gmail.com
+                  {CONTACT.email}
                 </span>
               </a>
             </div>
@@ -109,10 +116,11 @@ export default function Footer() {
           style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
         >
           <div className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>
-            © 2026 VRM Enterprises · {CONTACT.location} · Pharmaceutical Supplier
+            © 2026 VRM Enterprises · Meerut, UP · Pharmaceutical Supplier
           </div>
-          <div className="text-xs" style={{ color: 'rgba(255,255,255,0.2)' }}>
-            Sourced from licensed manufacturers · Baddi, Himachal Pradesh
+          <div className="flex flex-wrap gap-x-4 gap-y-1">
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.2)' }}>GSTIN: {CONTACT.gstin}</span>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.2)' }}>Drug Lic: {CONTACT.drugLicense}</span>
           </div>
         </div>
       </div>

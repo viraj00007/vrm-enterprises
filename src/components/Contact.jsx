@@ -1,24 +1,26 @@
-﻿import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { CONTACT } from '../data'
 
 const INFO_CARDS = [
   {
     icon: '📍',
-    label: 'Headquarters',
-    value: 'Bengaluru, Karnataka',
-    sub: 'Serving Pan India',
+    label: 'Registered Address',
+    value: '237/3 Jagriti Vihar, Meerut',
+    sub: 'Uttar Pradesh 250004',
   },
   {
-    icon: '⏰',
-    label: 'Business Hours',
-    value: 'Mon – Sat, 9 AM – 7 PM',
-    sub: '24/7 emergency supply available',
+    icon: '📞',
+    label: 'Phone Numbers',
+    value: `${CONTACT.phone1}  ·  ${CONTACT.phone2}`,
+    sub: 'Mon – Sat, 9 AM – 7 PM',
+    link: `tel:${CONTACT.phone1}`,
   },
   {
     icon: '✉️',
     label: 'Email Us',
-    value: 'vrmenterprises006@gmail.com',
+    value: CONTACT.email,
     sub: 'We respond within 24 hours',
-    link: 'mailto:vrmenterprises006@gmail.com',
+    link: `mailto:${CONTACT.email}`,
   },
 ]
 
@@ -136,5 +138,3 @@ export default function Contact() {
     </section>
   )
 }
-
-
