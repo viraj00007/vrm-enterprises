@@ -197,7 +197,7 @@ export default function Hero() {
 
             {/* Floating card — top left */}
             <div
-              className="badge-float absolute top-4 left-0 px-4 py-3 rounded-2xl cursor-default select-none"
+              className="badge-float absolute -top-8 left-8 px-4 py-3 rounded-2xl cursor-default select-none"
               style={{
                 background: 'rgba(255,255,255,0.07)',
                 backdropFilter: 'blur(20px)',
