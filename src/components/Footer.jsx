@@ -85,13 +85,6 @@ export default function Footer() {
                 </span>
               </div>
               <div className="flex items-start gap-2.5">
-                <span style={{ color: '#67e8f9' }}>📞</span>
-                <span className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                  {CONTACT.phone1}<br />
-                  <span style={{ color: 'rgba(255,255,255,0.35)' }}>{CONTACT.phone2}</span>
-                </span>
-              </div>
-              <div className="flex items-start gap-2.5">
                 <span style={{ color: '#67e8f9' }}>⏰</span>
                 <span className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>{CONTACT.hours}</span>
               </div>

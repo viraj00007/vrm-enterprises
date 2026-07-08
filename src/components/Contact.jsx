@@ -9,13 +9,6 @@ const INFO_CARDS = [
     sub: 'Uttar Pradesh 250004',
   },
   {
-    icon: '📞',
-    label: 'Phone Numbers',
-    value: `${CONTACT.phone1}  ·  ${CONTACT.phone2}`,
-    sub: 'Mon – Sat, 9 AM – 7 PM',
-    link: `tel:${CONTACT.phone1}`,
-  },
-  {
     icon: '✉️',
     label: 'Email Us',
     value: CONTACT.email,
