@@ -108,8 +108,13 @@ export default function Footer() {
           className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6"
           style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
         >
-          <div className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>
-            © 2026 VRM Enterprises · Meerut, UP · Pharmaceutical Supplier
+          <div className="flex flex-col gap-1">
+            <div className="text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>
+              © 2026 VRM Enterprises · Meerut, UP · Pharmaceutical Supplier
+            </div>
+            <div className="text-xs" style={{ color: 'rgba(255,255,255,0.2)' }}>
+              Proprietors: Rishabh Chaudhary &amp; Viraj Chaudhary
+            </div>
           </div>
           <div className="flex flex-wrap gap-x-4 gap-y-1">
             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.2)' }}>GSTIN: {CONTACT.gstin}</span>
